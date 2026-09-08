@@ -584,10 +584,10 @@ function resolveAnswer(selected) {
       await playParticipantVoice(randomClip('gameover', 2));
       if (!active()) return;
     }
-    correct ? playReward() : beginNextRound();
+    correct ? beginNextRound() : playFailureVideo();
   });
 }
-function playReward() {
+function playFailureVideo() {
   if (screen !== 'game') return;
   const video = document.querySelector('.scene-video');
   roundPhase = 'reward';
